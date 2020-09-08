@@ -1,4 +1,5 @@
 const String bgSplashScreen = 'assets/images/bg_splash_screen.png';
+const String bgHeader = 'assets/images/bg_header_other.png';
 const String bgHeaderHome = 'assets/images/bg_header_home.png';
 const String logoAutoPay = 'assets/images/logo_autopay_1.png';
 const String logoAutoPayWhite = 'assets/images/logo_autopay_white.png';

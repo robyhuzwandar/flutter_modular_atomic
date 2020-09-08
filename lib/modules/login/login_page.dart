@@ -1,5 +1,4 @@
 import 'package:autopay/modules/core/main_navigation.dart';
-import 'package:autopay/modules/home/screens/home_page.dart';
 import 'package:autopay/shared/shared.dart';
 import 'package:autopay/widgets/atomics/atomics.dart';
 import 'package:autopay/widgets/molecules/input/input_molecules.dart';

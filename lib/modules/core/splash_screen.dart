@@ -1,8 +1,9 @@
 import 'dart:async';
-import 'package:autopay/modules/login/login_page.dart';
+import 'package:autopay/modules/onboard/oboard.dart';
 import 'package:autopay/shared/shared.dart';
 import 'package:autopay/widgets/atomics/atomics.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SplashScreenPage extends StatefulWidget {
   @override
@@ -16,10 +17,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   void initState() {
     super.initState();
     _timer = new Timer(const Duration(seconds: 2), () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => LoginPage()),
-      );
+      Get.off(OnBoardPage());
     });
   }
 

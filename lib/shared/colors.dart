@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 
 // ui ux must have a guide line for assets to be clean
 
@@ -113,13 +115,38 @@ Map<String, Color> commonColor = {
   'black': const Color(0xFF333333),
 };
 
-Map<String, Color> serviceColor = {
-  'pulsa': const Color(0xFFECEEFF),
-  'paketData': const Color(0xFFFFEBF0),
-  'banking': const Color(0xFFE9FFF6),
-  'pln': const Color(0xFFFFDCBA),
-  'air': const Color(0xFFE4E7FA),
-  'bpjs': const Color(0xFFDCDDBE),
-  'gojek': const Color(0xFFE2FFEB),
-  'lainnya': const Color(0xFFE4EEFA),
+Map<String, List<Color>> serviceColor = {
+  'pulsa': [Color(0xFF2C2F4E), Color(0xFFFFFFFF)],
+  'paketData': [Color(0xFFED063D), Color(0xFFFFFFFF)],
+  'banking': [Color(0xFF16A36D), Color(0xFFFFFFFF)],
+  'pln': [Color(0xFFE07000), Color(0xFFFFFFFF)],
+  'air': [Color(0xFF75B1F2), Color(0xFFFFFFFF)],
+  'bpjs': [Color(0xFF726D0A), Color(0xFFFFFFFF)],
+  'gojek': [Color(0xFF089B39), Color(0xFFFFFFFF)],
+  'lainnya': [Color(0xFF2573D7), Color(0xFFFFFFFF)],
 };
+
+const double defaultMargin = 24;
+
+Color mainColor = Color(0xFF2573D7);
+Color accentColor1 = Color(0xFFBCCDE2);
+Color accentColor2 = Color(0xFFFBD460);
+Color accentColor3 = Color(0xFFADADAD);
+Color accentColor4 = Color(0xFFF72585);
+
+changeStatusBarColor(Color color, bool isColor) async {
+  try {
+    await FlutterStatusbarcolor.setStatusBarColor(color, animate: true);
+    if (isColor) {
+      if (useWhiteForeground(color)) {
+        FlutterStatusbarcolor.setStatusBarWhiteForeground(true);
+        FlutterStatusbarcolor.setNavigationBarWhiteForeground(true);
+      }
+    } else {
+      FlutterStatusbarcolor.setStatusBarWhiteForeground(false);
+      FlutterStatusbarcolor.setNavigationBarWhiteForeground(false);
+    }
+  } on PlatformException catch (e) {
+    debugPrint(e.toString());
+  }
+}

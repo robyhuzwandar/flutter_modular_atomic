@@ -1,40 +1,82 @@
 import 'package:autopay/shared/assets.dart';
 import 'package:autopay/shared/colors.dart';
+import 'package:autopay/shared/shared.dart';
 import 'package:flutter/material.dart';
 
 class ServiceMock {
   final String title;
   final String icon;
-  final Color color;
+  final List<Color> gradient;
 
-  ServiceMock({this.color, this.title, this.icon});
+  ServiceMock({this.gradient, this.title, this.icon});
 }
 
 List<ServiceMock> listFeature = [
   ServiceMock(
-      title: 'Pulsa',
+      title: ServiceType.pulsa,
       icon: IconService.iconPulsa,
-      color: serviceColor['pulsa']),
+      gradient: serviceColor['pulsa']),
   ServiceMock(
-      title: 'Paket Data',
+      title: ServiceType.paketData,
       icon: IconService.iconPaketData,
-      color: serviceColor['paketData']),
+      gradient: serviceColor['paketData']),
   ServiceMock(
-      title: 'Banking',
+      title: ServiceType.banking,
       icon: IconService.iconBanking,
-      color: serviceColor['banking']),
+      gradient: serviceColor['banking']),
   ServiceMock(
-      title: 'PLN', icon: IconService.iconPln, color: serviceColor['pln']),
+      title: ServiceType.pln,
+      icon: IconService.iconPln,
+      gradient: serviceColor['pln']),
   ServiceMock(
-      title: 'Air', icon: IconService.iconAir, color: serviceColor['air']),
+      title: ServiceType.air,
+      icon: IconService.iconAir,
+      gradient: serviceColor['air']),
   ServiceMock(
-      title: 'BPJS', icon: IconService.iconBpjs, color: serviceColor['bpjs']),
+      title: ServiceType.bpjs,
+      icon: IconService.iconBpjs,
+      gradient: serviceColor['bpjs']),
   ServiceMock(
-      title: 'Gojek',
+      title: ServiceType.gojek,
       icon: IconService.iconGojek,
-      color: serviceColor['gojek']),
+      gradient: serviceColor['gojek']),
   ServiceMock(
-      title: 'Lainnya',
+      title: ServiceType.lainnya,
       icon: IconService.iconLainnya,
-      color: serviceColor['lainnya']),
+      gradient: serviceColor['lainnya']),
+];
+
+List<ServiceMock> listOtherFeature = [
+  ServiceMock(
+      title: ServiceType.pulsa,
+      icon: IconService.iconPulsa,
+      gradient: serviceColor['pulsa']),
+  ServiceMock(
+      title: ServiceType.paketData,
+      icon: IconService.iconPaketData,
+      gradient: serviceColor['paketData']),
+  ServiceMock(
+      title: ServiceType.banking,
+      icon: IconService.iconBanking,
+      gradient: serviceColor['banking']),
+  ServiceMock(
+      title: ServiceType.pln,
+      icon: IconService.iconPln,
+      gradient: serviceColor['pln']),
+  ServiceMock(
+      title: ServiceType.air,
+      icon: IconService.iconAir,
+      gradient: serviceColor['air']),
+  ServiceMock(
+      title: ServiceType.bpjs,
+      icon: IconService.iconBpjs,
+      gradient: serviceColor['bpjs']),
+  ServiceMock(
+      title: ServiceType.gojek,
+      icon: IconService.iconGojek,
+      gradient: serviceColor['gojek']),
+  ServiceMock(
+      title: ServiceType.lainnya,
+      icon: IconService.iconLainnya,
+      gradient: serviceColor['lainnya']),
 ];
